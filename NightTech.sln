@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{006551B0-0166-464D-BDB6-EA1322F7959C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightTect.API", "src\NightTect.API\NightTect.API.csproj", "{2EA7A5D1-B33A-8B51-6A62-FAF9DE8657D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightTech.Application", "src\NightTech.Application\NightTech.Application.csproj", "{C8854789-E902-CA21-709B-4B009D720B1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightTech.Infrastructure", "src\NightTech.Infrastructure\NightTech.Infrastructure.csproj", "{9E30297F-0935-07FD-2861-7D3298E86668}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightTech.Domain", "src\NightTech.Domain\NightTech.Domain.csproj", "{B42DEE2B-118A-BC39-F5F7-74042B440F05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EA7A5D1-B33A-8B51-6A62-FAF9DE8657D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA7A5D1-B33A-8B51-6A62-FAF9DE8657D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA7A5D1-B33A-8B51-6A62-FAF9DE8657D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA7A5D1-B33A-8B51-6A62-FAF9DE8657D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8854789-E902-CA21-709B-4B009D720B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8854789-E902-CA21-709B-4B009D720B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8854789-E902-CA21-709B-4B009D720B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8854789-E902-CA21-709B-4B009D720B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E30297F-0935-07FD-2861-7D3298E86668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E30297F-0935-07FD-2861-7D3298E86668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E30297F-0935-07FD-2861-7D3298E86668}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E30297F-0935-07FD-2861-7D3298E86668}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B42DEE2B-118A-BC39-F5F7-74042B440F05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B42DEE2B-118A-BC39-F5F7-74042B440F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B42DEE2B-118A-BC39-F5F7-74042B440F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B42DEE2B-118A-BC39-F5F7-74042B440F05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2EA7A5D1-B33A-8B51-6A62-FAF9DE8657D3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C8854789-E902-CA21-709B-4B009D720B1A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{9E30297F-0935-07FD-2861-7D3298E86668} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{B42DEE2B-118A-BC39-F5F7-74042B440F05} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CBBDDE1-A691-48CE-B38F-817DF5141896}
+	EndGlobalSection
+EndGlobal
