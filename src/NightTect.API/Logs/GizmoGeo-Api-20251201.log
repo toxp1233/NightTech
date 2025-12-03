@@ -1,0 +1,152 @@
+[2025-12-01 15:19:28 INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-12-01 15:19:28 INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-12-01 15:19:29 INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-12-01 15:19:32 INF] HTTP GET /swagger responded 301 in 4.6630 ms 
+[2025-12-01 15:19:32 INF] HTTP GET /swagger/index.html responded 200 in 77.0901 ms 
+[2025-12-01 15:19:32 INF] HTTP GET /swagger/swagger-ui.css responded 200 in 38.8565 ms 
+[2025-12-01 15:19:32 INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 42.9061 ms 
+[2025-12-01 15:19:32 INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 89.3103 ms 
+[2025-12-01 15:19:33 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 32.3706 ms 
+[2025-12-01 15:19:33 INF] HTTP GET /swagger/favicon-32x32.png responded 200 in 0.3854 ms 
+[2025-12-01 15:22:02 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-12-01 15:22:02 INF] Executed DbCommand (82ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-12-01 15:22:05 INF] HTTP POST /api/Auth/resend-email-verification responded 200 in 3893.1181 ms 
+[2025-12-01 15:22:24 INF] HTTP GET /api/auth/verify-email responded 200 in 203.9822 ms 
+[2025-12-01 15:22:24 INF] HTTP GET /favicon.ico responded 404 in 2.2348 ms 
+[2025-12-01 15:35:33 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-12-01 15:35:33 INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-12-01 15:35:33 INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-12-01 15:35:34 INF] HTTP GET /swagger/index.html responded 200 in 82.0219 ms 
+[2025-12-01 15:35:34 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 22.4983 ms 
+[2025-12-01 15:35:49 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-12-01 15:35:50 INF] Executed DbCommand (34ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-12-01 15:35:52 INF] HTTP POST /api/Auth/resend-email-verification responded 200 in 3470.0654 ms 
+[2025-12-01 15:35:56 INF] HTTP GET /api/auth/verify-email responded 200 in 175.6800 ms 
+[2025-12-01 15:35:56 INF] HTTP GET /favicon.ico responded 404 in 2.0043 ms 
+[2025-12-01 15:39:02 INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-12-01 15:39:02 INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-12-01 15:39:02 INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-12-01 15:39:03 INF] HTTP GET /swagger/index.html responded 200 in 70.1233 ms 
+[2025-12-01 15:39:04 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 20.2300 ms 
+[2025-12-01 15:39:13 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-12-01 15:39:13 INF] Executed DbCommand (39ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-12-01 15:39:16 INF] HTTP POST /api/Auth/resend-email-verification responded 200 in 2995.5972 ms 
+[2025-12-01 15:39:20 ERR] JWT validation failed 
+Microsoft.IdentityModel.Tokens.SecurityTokenNoExpirationException: IDX10225: Lifetime validation failed. The token is missing an Expiration Time. Tokentype: 'System.IdentityModel.Tokens.Jwt.JwtSecurityToken'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at NightTech.Infrastructure.Helper.JwtService.ValidateEmailVerificationToken(String token) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Infrastructure\Helper\JwtService.cs:line 122
+[2025-12-01 15:39:20 INF] HTTP GET /api/auth/verify-email responded 200 in 202.3775 ms 
+[2025-12-01 15:40:44 INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-12-01 15:40:44 INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-12-01 15:40:44 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-12-01 15:40:45 INF] HTTP GET /swagger/index.html responded 200 in 124.2312 ms 
+[2025-12-01 15:40:45 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 34.8680 ms 
+[2025-12-01 15:40:55 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-12-01 15:40:56 INF] Executed DbCommand (43ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-12-01 15:40:57 INF] HTTP POST /api/Auth/resend-email-verification responded 200 in 2696.9123 ms 
+[2025-12-01 15:41:00 ERR] JWT validation failed 
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidAudienceException: IDX10206: Unable to validate audience. The 'audiences' parameter is empty.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateAudience(IEnumerable`1 audiences, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateAudience(IEnumerable`1 audiences, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at NightTech.Infrastructure.Helper.JwtService.ValidateEmailVerificationToken(String token) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Infrastructure\Helper\JwtService.cs:line 126
+[2025-12-01 15:41:00 INF] HTTP GET /api/auth/verify-email responded 200 in 189.9893 ms 
+[2025-12-01 15:56:47 INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-12-01 15:56:47 INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-12-01 15:56:47 INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-12-01 15:56:48 INF] HTTP GET /swagger/index.html responded 200 in 91.9513 ms 
+[2025-12-01 15:56:49 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 55.3396 ms 
+[2025-12-01 15:57:00 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-12-01 15:57:01 INF] Executed DbCommand (41ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-12-01 15:57:03 INF] HTTP POST /api/Auth/resend-email-verification responded 200 in 2600.4027 ms 
+[2025-12-01 15:57:06 INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Id] = @__id_0 
+[2025-12-01 15:57:06 INF] Executed DbCommand (9ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [EmailConfirmed] = @p0
+OUTPUT 1
+WHERE [Id] = @p1; 
+[2025-12-01 15:57:06 INF] HTTP GET /api/auth/verify-email responded 200 in 238.1281 ms 
+[2025-12-01 15:57:27 INF] Executed DbCommand (6ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-12-01 15:57:27 INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0, [RefreshTokenExpireDate] = @p1
+OUTPUT 1
+WHERE [Id] = @p2; 
+[2025-12-01 15:57:27 INF] HTTP POST /api/Auth/login responded 200 in 465.8222 ms 
+[2025-12-01 15:59:47 WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-12-01 15:59:47 INF] Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[ItemCount], [c1].[TotalPrice], [c1].[UserId], [c0].[Id], [c0].[CartId], [c0].[Price], [c0].[ProductId], [c0].[ProductName], [c0].[Quantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [c1]
+LEFT JOIN [CartItems] AS [c0] ON [c1].[Id] = [c0].[CartId]
+ORDER BY [c1].[Id] 
+[2025-12-01 15:59:47 INF] HTTP GET /api/Cart/by-user responded 200 in 364.5307 ms 

@@ -1,0 +1,20 @@
+[2025-10-16 17:21:49 INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-16 17:21:49 INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-16 17:21:49 INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-16 17:21:53 INF] HTTP GET /swagger/index.html responded 200 in 104.4327 ms 
+[2025-10-16 17:21:53 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 31.1290 ms 
+[2025-10-16 17:34:28 INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-16 17:34:28 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-16 17:34:28 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-16 17:34:29 INF] HTTP GET /swagger/index.html responded 200 in 82.1883 ms 
+[2025-10-16 17:34:29 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 38.6774 ms 

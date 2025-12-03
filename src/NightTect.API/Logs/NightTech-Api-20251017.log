@@ -1,0 +1,1093 @@
+[2025-10-17 04:19:18 INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-17 04:19:18 INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-17 04:19:18 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-17 04:19:22 INF] HTTP GET /swagger/index.html responded 200 in 128.8731 ms 
+[2025-10-17 04:19:23 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 97.6218 ms 
+[2025-10-17 04:20:01 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-10-17 04:20:01 WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-10-17 04:20:02 INF] Executed DbCommand (58ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[UserName] = @__name_0 
+[2025-10-17 04:20:02 INF] Executed DbCommand (3ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-10-17 04:20:03 INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Guid), @p17='?' (DbType = Int32), @p18='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p19='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CartId], [Country], [CreatedAt], [Email], [FirstName], [IsActive], [IsAdmin], [LastName], [PasswordHash], [PhoneNumber], [RefreshToken], [RefreshTokenExpireDate], [Role], [UpdatedAt], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+INSERT INTO [Carts] ([Id], [ItemCount], [TotalPrice], [UserId])
+VALUES (@p16, @p17, @p18, @p19); 
+[2025-10-17 04:20:03 INF] Executed DbCommand (5ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CartId] = @p0, [RefreshToken] = @p1, [RefreshTokenExpireDate] = @p2
+OUTPUT 1
+WHERE [Id] = @p3; 
+[2025-10-17 04:20:03 INF] HTTP POST /api/Auth/register responded 200 in 1827.0008 ms 
+[2025-10-17 04:21:04 INF] Executed DbCommand (17ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Id] = @__id_0 
+[2025-10-17 04:21:04 INF] Executed DbCommand (5ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0
+OUTPUT 1
+WHERE [Id] = @p1; 
+[2025-10-17 04:21:04 INF] HTTP POST /api/Auth/logout responded 204 in 194.3493 ms 
+[2025-10-17 04:22:22 INF] Executed DbCommand (6ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-10-17 04:22:22 INF] Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0
+OUTPUT 1
+WHERE [Id] = @p1; 
+[2025-10-17 04:22:22 INF] HTTP POST /api/Auth/login responded 200 in 382.4865 ms 
+[2025-10-17 04:22:44 INF] Executed DbCommand (17ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Id] = @__id_0 
+[2025-10-17 04:22:44 INF] HTTP POST /api/Auth/Refresh-Token responded 200 in 43.9399 ms 
+[2025-10-17 04:23:07 INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Id] = @__id_0 
+[2025-10-17 04:23:07 INF] Executed DbCommand (4ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0
+OUTPUT 1
+WHERE [Id] = @p1; 
+[2025-10-17 04:23:07 INF] HTTP POST /api/Auth/logout responded 204 in 27.5207 ms 
+[2025-10-17 16:55:27 INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-17 16:55:27 INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-17 16:55:27 INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-17 16:55:30 INF] HTTP GET /swagger/index.html responded 200 in 85.1610 ms 
+[2025-10-17 16:55:30 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 57.8910 ms 
+[2025-10-17 17:20:50 INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-17 17:20:51 INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-17 17:20:51 INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-17 17:20:52 INF] HTTP GET /swagger/index.html responded 200 in 110.0561 ms 
+[2025-10-17 17:20:53 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 54.1968 ms 
+[2025-10-17 17:22:06 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-10-17 17:22:06 WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-10-17 17:22:07 INF] Executed DbCommand (54ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[UserName] = @__name_0 
+[2025-10-17 17:22:07 INF] Executed DbCommand (4ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-10-17 17:22:07 INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Guid), @p17='?' (DbType = Int32), @p18='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p19='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CartId], [Country], [CreatedAt], [Email], [FirstName], [IsActive], [IsAdmin], [LastName], [PasswordHash], [PhoneNumber], [RefreshToken], [RefreshTokenExpireDate], [Role], [UpdatedAt], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+INSERT INTO [Carts] ([Id], [ItemCount], [TotalPrice], [UserId])
+VALUES (@p16, @p17, @p18, @p19); 
+[2025-10-17 17:22:07 INF] Executed DbCommand (6ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CartId] = @p0, [RefreshToken] = @p1, [RefreshTokenExpireDate] = @p2
+OUTPUT 1
+WHERE [Id] = @p3; 
+[2025-10-17 17:22:07 INF] HTTP POST /api/Auth/register responded 200 in 1867.1362 ms 
+[2025-10-17 18:02:56 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-17 18:02:57 INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-17 18:02:57 INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-17 18:02:58 INF] HTTP GET /swagger/index.html responded 200 in 96.0670 ms 
+[2025-10-17 18:02:58 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 30.6236 ms 
+[2025-10-17 18:03:17 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-10-17 18:03:17 INF] Executed DbCommand (38ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-10-17 18:03:18 INF] Executed DbCommand (7ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0, [RefreshTokenExpireDate] = @p1
+OUTPUT 1
+WHERE [Id] = @p2; 
+[2025-10-17 18:03:18 INF] HTTP POST /api/Auth/login responded 200 in 1462.4661 ms 
+[2025-10-17 18:04:10 WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-10-17 18:04:10 INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p] 
+[2025-10-17 18:04:10 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. 
+[2025-10-17 18:04:10 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. 
+[2025-10-17 18:04:10 INF] Executed DbCommand (9ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId], CAST(0 AS bit), [c].[Id], [c].[CategoryName], [p1].[Id], [p1].[ProductName], [p1].[Description], [p1].[Stock], [p1].[Price], [p1].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p1] ON [c].[Id] = [p1].[CategoryId]
+ORDER BY [p0].[Id], [c].[Id] 
+[2025-10-17 18:04:10 INF] HTTP GET /api/Products responded 200 in 583.9413 ms 
+[2025-10-17 18:04:18 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p] 
+[2025-10-17 18:04:18 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. 
+[2025-10-17 18:04:18 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. 
+[2025-10-17 18:04:18 INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId], CAST(0 AS bit), [c].[Id], [c].[CategoryName], [p1].[Id], [p1].[ProductName], [p1].[Description], [p1].[Stock], [p1].[Price], [p1].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p1] ON [c].[Id] = [p1].[CategoryId]
+ORDER BY [p0].[Id], [c].[Id] 
+[2025-10-17 18:04:18 INF] HTTP GET /api/Products responded 200 in 63.2821 ms 
+[2025-10-17 18:04:20 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p] 
+[2025-10-17 18:04:20 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId], CAST(0 AS bit), [c].[Id], [c].[CategoryName], [p1].[Id], [p1].[ProductName], [p1].[Description], [p1].[Stock], [p1].[Price], [p1].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p1] ON [c].[Id] = [p1].[CategoryId]
+ORDER BY [p0].[Id], [c].[Id] 
+[2025-10-17 18:04:20 INF] HTTP GET /api/Products responded 200 in 20.6272 ms 
+[2025-10-17 18:33:10 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-17 18:33:10 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-17 18:33:10 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-17 18:33:12 INF] HTTP GET /swagger/index.html responded 200 in 107.1450 ms 
+[2025-10-17 18:33:12 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 29.1499 ms 
+[2025-10-17 18:33:34 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-10-17 18:33:35 INF] Executed DbCommand (46ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-10-17 18:33:36 INF] Executed DbCommand (6ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0, [RefreshTokenExpireDate] = @p1
+OUTPUT 1
+WHERE [Id] = @p2; 
+[2025-10-17 18:33:36 INF] HTTP POST /api/Auth/login responded 200 in 1567.5940 ms 
+[2025-10-17 18:37:10 INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-17 18:37:10 INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-17 18:37:10 INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-17 18:37:12 INF] HTTP GET /swagger/index.html responded 200 in 146.9902 ms 
+[2025-10-17 18:37:12 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 59.2087 ms 
+[2025-10-17 18:37:59 INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-17 18:37:59 INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-17 18:37:59 INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-17 18:38:01 INF] HTTP GET /swagger/index.html responded 200 in 154.5567 ms 
+[2025-10-17 18:38:01 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 96.7523 ms 
+[2025-10-17 18:57:12 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-10-17 18:57:12 INF] Executed DbCommand (73ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-10-17 18:57:13 INF] Executed DbCommand (5ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0, [RefreshTokenExpireDate] = @p1
+OUTPUT 1
+WHERE [Id] = @p2; 
+[2025-10-17 18:57:13 INF] HTTP POST /api/Auth/login responded 200 in 1650.8270 ms 
+[2025-10-17 18:57:45 WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-10-17 18:57:45 INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryName], [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock], [p].[UpdatedAt]
+FROM [Categories] AS [c]
+LEFT JOIN [Products] AS [p] ON [c].[Id] = [p].[CategoryId]
+ORDER BY [c].[Id] 
+[2025-10-17 18:57:45 INF] HTTP GET /api/Categories responded 200 in 463.9565 ms 
+[2025-10-17 18:57:54 INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Categories] ([CategoryName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0); 
+[2025-10-17 18:57:54 INF] HTTP POST /api/Categories responded 201 in 142.0745 ms 
+[2025-10-17 18:58:02 INF] Executed DbCommand (4ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[CategoryName], [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CategoryName]
+    FROM [Categories] AS [c]
+    WHERE [c].[CategoryName] = @__name_0
+) AS [c0]
+LEFT JOIN [Products] AS [p] ON [c0].[Id] = [p].[CategoryId]
+ORDER BY [c0].[Id] 
+[2025-10-17 18:58:02 INF] HTTP GET /api/Categories/phone responded 200 in 59.9188 ms 
+[2025-10-17 18:58:04 INF] Executed DbCommand (3ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[CategoryName], [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CategoryName]
+    FROM [Categories] AS [c]
+    WHERE [c].[CategoryName] = @__name_0
+) AS [c0]
+LEFT JOIN [Products] AS [p] ON [c0].[Id] = [p].[CategoryId]
+ORDER BY [c0].[Id] 
+[2025-10-17 18:58:04 ERR] HTTP GET /api/Categories/phon responded 500 in 215.0854 ms 
+NightTech.Domain.Exceptions.NotFoundException: Category with: phon doesn't exist
+   at NightTech.Application.Categories.Querys.GetCategoryByName.GetCategoryByNameQueryHandler.Handle(GetCategoryByNameQuery request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Categories\Querys\GetCategoryByName\GetCategoryByNameQueryHandler.cs:line 14
+   at NightTect.API.Controllers.CategoriesController.GetCategoryByName(String name) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\CategoriesController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-10-17 18:58:05 WRN] Category with: phon doesn't exist 
+[2025-10-17 18:58:12 INF] Executed DbCommand (8ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[CategoryName], [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CategoryName]
+    FROM [Categories] AS [c]
+    WHERE [c].[CategoryName] = @__name_0
+) AS [c0]
+LEFT JOIN [Products] AS [p] ON [c0].[Id] = [p].[CategoryId]
+ORDER BY [c0].[Id] 
+[2025-10-17 18:58:12 INF] HTTP GET /api/Categories/laptop responded 200 in 40.8123 ms 
+[2025-10-17 18:58:15 INF] Executed DbCommand (10ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[CategoryName], [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CategoryName]
+    FROM [Categories] AS [c]
+    WHERE [c].[CategoryName] = @__name_0
+) AS [c0]
+LEFT JOIN [Products] AS [p] ON [c0].[Id] = [p].[CategoryId]
+ORDER BY [c0].[Id] 
+[2025-10-17 18:58:15 INF] HTTP GET /api/Categories/LAPTOP responded 200 in 17.4140 ms 
+[2025-10-17 18:58:18 INF] Executed DbCommand (10ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[CategoryName], [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CategoryName]
+    FROM [Categories] AS [c]
+    WHERE [c].[CategoryName] = @__name_0
+) AS [c0]
+LEFT JOIN [Products] AS [p] ON [c0].[Id] = [p].[CategoryId]
+ORDER BY [c0].[Id] 
+[2025-10-17 18:58:18 INF] HTTP GET /api/Categories/LAPtoP responded 200 in 19.5176 ms 
+[2025-10-17 18:58:23 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0 
+[2025-10-17 18:58:23 ERR] HTTP GET /api/Categories/1001 responded 500 in 101.7588 ms 
+NightTech.Domain.Exceptions.NotFoundException: Category with: 1001 doesn't exist
+   at NightTech.Application.Categories.Querys.GetCategoryById.GetCategoryByIdQueryHandler.Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Categories\Querys\GetCategoryById\GetCategoryByIdQueryHandler.cs:line 14
+   at NightTect.API.Controllers.CategoriesController.GetCategoryById(Int32 id) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\CategoriesController.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-10-17 18:58:23 WRN] Category with: 1001 doesn't exist 
+[2025-10-17 18:58:29 INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0 
+[2025-10-17 18:58:29 ERR] HTTP GET /api/Categories/1000 responded 500 in 89.6538 ms 
+NightTech.Domain.Exceptions.NotFoundException: Category with: 1000 doesn't exist
+   at NightTech.Application.Categories.Querys.GetCategoryById.GetCategoryByIdQueryHandler.Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Categories\Querys\GetCategoryById\GetCategoryByIdQueryHandler.cs:line 14
+   at NightTect.API.Controllers.CategoriesController.GetCategoryById(Int32 id) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\CategoriesController.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-10-17 18:58:29 WRN] Category with: 1000 doesn't exist 
+[2025-10-17 18:58:31 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0 
+[2025-10-17 18:58:31 ERR] HTTP GET /api/Categories/4 responded 500 in 109.6368 ms 
+NightTech.Domain.Exceptions.NotFoundException: Category with: 4 doesn't exist
+   at NightTech.Application.Categories.Querys.GetCategoryById.GetCategoryByIdQueryHandler.Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Categories\Querys\GetCategoryById\GetCategoryByIdQueryHandler.cs:line 14
+   at NightTect.API.Controllers.CategoriesController.GetCategoryById(Int32 id) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\CategoriesController.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-10-17 18:58:31 WRN] Category with: 4 doesn't exist 
+[2025-10-17 18:58:34 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0 
+[2025-10-17 18:58:34 INF] HTTP GET /api/Categories/3 responded 200 in 11.2587 ms 
+[2025-10-17 18:58:36 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0 
+[2025-10-17 18:58:37 ERR] HTTP GET /api/Categories/1 responded 500 in 82.6695 ms 
+NightTech.Domain.Exceptions.NotFoundException: Category with: 1 doesn't exist
+   at NightTech.Application.Categories.Querys.GetCategoryById.GetCategoryByIdQueryHandler.Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Categories\Querys\GetCategoryById\GetCategoryByIdQueryHandler.cs:line 14
+   at NightTect.API.Controllers.CategoriesController.GetCategoryById(Int32 id) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\CategoriesController.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-10-17 18:58:37 WRN] Category with: 1 doesn't exist 
+[2025-10-17 18:58:38 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0 
+[2025-10-17 18:58:39 ERR] HTTP GET /api/Categories/2 responded 500 in 81.3877 ms 
+NightTech.Domain.Exceptions.NotFoundException: Category with: 2 doesn't exist
+   at NightTech.Application.Categories.Querys.GetCategoryById.GetCategoryByIdQueryHandler.Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Categories\Querys\GetCategoryById\GetCategoryByIdQueryHandler.cs:line 14
+   at NightTect.API.Controllers.CategoriesController.GetCategoryById(Int32 id) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\CategoriesController.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-10-17 18:58:39 WRN] Category with: 2 doesn't exist 
+[2025-10-17 18:58:41 INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0 
+[2025-10-17 18:58:42 ERR] HTTP GET /api/Categories/1001 responded 500 in 102.0280 ms 
+NightTech.Domain.Exceptions.NotFoundException: Category with: 1001 doesn't exist
+   at NightTech.Application.Categories.Querys.GetCategoryById.GetCategoryByIdQueryHandler.Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Categories\Querys\GetCategoryById\GetCategoryByIdQueryHandler.cs:line 14
+   at NightTect.API.Controllers.CategoriesController.GetCategoryById(Int32 id) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\CategoriesController.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-10-17 18:58:42 WRN] Category with: 1001 doesn't exist 
+[2025-10-17 18:58:44 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0 
+[2025-10-17 18:58:44 ERR] HTTP GET /api/Categories/1002 responded 500 in 101.0011 ms 
+NightTech.Domain.Exceptions.NotFoundException: Category with: 1002 doesn't exist
+   at NightTech.Application.Categories.Querys.GetCategoryById.GetCategoryByIdQueryHandler.Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Categories\Querys\GetCategoryById\GetCategoryByIdQueryHandler.cs:line 14
+   at NightTect.API.Controllers.CategoriesController.GetCategoryById(Int32 id) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\CategoriesController.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-10-17 18:58:44 WRN] Category with: 1002 doesn't exist 
+[2025-10-17 18:58:57 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0 
+[2025-10-17 18:58:57 INF] HTTP GET /api/Categories/1003 responded 200 in 13.9387 ms 
+[2025-10-17 18:59:16 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0 
+[2025-10-17 18:59:16 INF] Executed DbCommand (3ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Categories] SET [CategoryName] = @p0
+OUTPUT 1
+WHERE [Id] = @p1; 
+[2025-10-17 18:59:16 INF] HTTP PUT /api/Categories/update/1003 responded 200 in 67.4483 ms 
+[2025-10-17 18:59:35 INF] Executed DbCommand (15ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0 
+[2025-10-17 18:59:35 INF] HTTP GET /api/Categories/1003 responded 200 in 22.0052 ms 
+[2025-10-17 18:59:44 INF] Executed DbCommand (16ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0 
+[2025-10-17 18:59:44 INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Categories]
+OUTPUT 1
+WHERE [Id] = @p0; 
+[2025-10-17 18:59:44 INF] HTTP DELETE /api/Categories/delete/1003 responded 200 in 73.9912 ms 
+[2025-10-17 18:59:49 INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0 
+[2025-10-17 18:59:49 ERR] HTTP GET /api/Categories/1003 responded 500 in 125.4952 ms 
+NightTech.Domain.Exceptions.NotFoundException: Category with: 1003 doesn't exist
+   at NightTech.Application.Categories.Querys.GetCategoryById.GetCategoryByIdQueryHandler.Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Categories\Querys\GetCategoryById\GetCategoryByIdQueryHandler.cs:line 14
+   at NightTect.API.Controllers.CategoriesController.GetCategoryById(Int32 id) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\CategoriesController.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-10-17 18:59:49 WRN] Category with: 1003 doesn't exist 
+[2025-10-17 18:59:57 INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Products] ([Id], [CategoryId], [CreatedAt], [Description], [Price], [ProductName], [Stock], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7); 
+[2025-10-17 18:59:57 INF] HTTP POST /api/Products responded 201 in 92.1379 ms 
+[2025-10-17 19:00:20 INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p] 
+[2025-10-17 19:00:20 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. 
+[2025-10-17 19:00:20 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. 
+[2025-10-17 19:00:20 INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId], CAST(0 AS bit), [c].[Id], [c].[CategoryName], [p1].[Id], [p1].[ProductName], [p1].[Description], [p1].[Stock], [p1].[Price], [p1].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p1] ON [c].[Id] = [p1].[CategoryId]
+ORDER BY [p0].[Id], [c].[Id] 
+[2025-10-17 19:00:20 INF] HTTP GET /api/Products responded 200 in 195.0684 ms 
+[2025-10-17 19:00:23 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p] 
+[2025-10-17 19:00:23 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. 
+[2025-10-17 19:00:23 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. 
+[2025-10-17 19:00:23 INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId], CAST(0 AS bit), [c].[Id], [c].[CategoryName], [p1].[Id], [p1].[ProductName], [p1].[Description], [p1].[Stock], [p1].[Price], [p1].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p1] ON [c].[Id] = [p1].[CategoryId]
+ORDER BY [p0].[Id], [c].[Id] 
+[2025-10-17 19:00:23 INF] HTTP GET /api/Products responded 200 in 61.5441 ms 
+[2025-10-17 19:00:28 INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p] 
+[2025-10-17 19:00:28 INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId], CAST(0 AS bit), [c].[Id], [c].[CategoryName], [p1].[Id], [p1].[ProductName], [p1].[Description], [p1].[Stock], [p1].[Price], [p1].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p1] ON [c].[Id] = [p1].[CategoryId]
+ORDER BY [p0].[Id], [c].[Id] 
+[2025-10-17 19:00:28 INF] HTTP GET /api/Products responded 200 in 59.6819 ms 
+[2025-10-17 19:00:43 INF] Executed DbCommand (14ms) [Parameters=[@__search_0_contains='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE LOWER([c].[CategoryName]) LIKE @__search_0_contains ESCAPE N'\' 
+[2025-10-17 19:00:43 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. 
+[2025-10-17 19:00:43 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. 
+[2025-10-17 19:00:43 INF] Executed DbCommand (5ms) [Parameters=[@__search_0_contains='?' (Size = 4000), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[ProductName], [s].[Description], [s].[Stock], [s].[Price], [s].[CategoryId], [s].[c], [s].[Id0], [s].[CategoryName], [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[ProductName], [p].[Description], [p].[Stock], [p].[Price], [p].[CategoryId], CAST(0 AS bit) AS [c], [c].[Id] AS [Id0], [c].[CategoryName]
+    FROM [Products] AS [p]
+    INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+    WHERE LOWER([c].[CategoryName]) LIKE @__search_0_contains ESCAPE N'\'
+    ORDER BY (SELECT 1)
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [s]
+LEFT JOIN [Products] AS [p0] ON [s].[Id0] = [p0].[CategoryId]
+ORDER BY [s].[Id], [s].[Id0] 
+[2025-10-17 19:00:43 INF] HTTP GET /api/Products responded 200 in 75.1654 ms 
+[2025-10-17 19:00:47 INF] Executed DbCommand (1ms) [Parameters=[@__search_0_contains='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE LOWER([c].[CategoryName]) LIKE @__search_0_contains ESCAPE N'\' 
+[2025-10-17 19:00:47 INF] Executed DbCommand (1ms) [Parameters=[@__search_0_contains='?' (Size = 4000), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[ProductName], [s].[Description], [s].[Stock], [s].[Price], [s].[CategoryId], [s].[c], [s].[Id0], [s].[CategoryName], [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[ProductName], [p].[Description], [p].[Stock], [p].[Price], [p].[CategoryId], CAST(0 AS bit) AS [c], [c].[Id] AS [Id0], [c].[CategoryName]
+    FROM [Products] AS [p]
+    INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+    WHERE LOWER([c].[CategoryName]) LIKE @__search_0_contains ESCAPE N'\'
+    ORDER BY (SELECT 1)
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [s]
+LEFT JOIN [Products] AS [p0] ON [s].[Id0] = [p0].[CategoryId]
+ORDER BY [s].[Id], [s].[Id0] 
+[2025-10-17 19:00:47 INF] HTTP GET /api/Products responded 200 in 18.7632 ms 
+[2025-10-17 19:00:51 INF] Executed DbCommand (3ms) [Parameters=[@__search_0_contains='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE LOWER([c].[CategoryName]) LIKE @__search_0_contains ESCAPE N'\' 
+[2025-10-17 19:00:51 INF] Executed DbCommand (1ms) [Parameters=[@__search_0_contains='?' (Size = 4000), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[ProductName], [s].[Description], [s].[Stock], [s].[Price], [s].[CategoryId], [s].[c], [s].[Id0], [s].[CategoryName], [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[ProductName], [p].[Description], [p].[Stock], [p].[Price], [p].[CategoryId], CAST(0 AS bit) AS [c], [c].[Id] AS [Id0], [c].[CategoryName]
+    FROM [Products] AS [p]
+    INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+    WHERE LOWER([c].[CategoryName]) LIKE @__search_0_contains ESCAPE N'\'
+    ORDER BY (SELECT 1)
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [s]
+LEFT JOIN [Products] AS [p0] ON [s].[Id0] = [p0].[CategoryId]
+ORDER BY [s].[Id], [s].[Id0] 
+[2025-10-17 19:00:51 INF] HTTP GET /api/Products responded 200 in 23.5842 ms 
+[2025-10-17 19:00:54 INF] Executed DbCommand (3ms) [Parameters=[@__search_0_contains='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE LOWER([c].[CategoryName]) LIKE @__search_0_contains ESCAPE N'\' 
+[2025-10-17 19:00:54 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. 
+[2025-10-17 19:00:54 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. 
+[2025-10-17 19:00:54 INF] Executed DbCommand (7ms) [Parameters=[@__search_0_contains='?' (Size = 4000), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[ProductName], [s].[Description], [s].[Stock], [s].[Price], [s].[CategoryId], [s].[c], [s].[Id0], [s].[CategoryName], [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[ProductName], [p].[Description], [p].[Stock], [p].[Price], [p].[CategoryId], CAST(0 AS bit) AS [c], [c].[Id] AS [Id0], [c].[CategoryName]
+    FROM [Products] AS [p]
+    INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+    WHERE LOWER([c].[CategoryName]) LIKE @__search_0_contains ESCAPE N'\'
+    ORDER BY (SELECT 1)
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [s]
+LEFT JOIN [Products] AS [p0] ON [s].[Id0] = [p0].[CategoryId]
+ORDER BY [s].[Id], [s].[Id0] 
+[2025-10-17 19:00:54 INF] HTTP GET /api/Products responded 200 in 54.2709 ms 
+[2025-10-17 19:00:58 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p] 
+[2025-10-17 19:00:58 INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId], CAST(0 AS bit), [c].[Id], [c].[CategoryName], [p1].[Id], [p1].[ProductName], [p1].[Description], [p1].[Stock], [p1].[Price], [p1].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p1] ON [c].[Id] = [p1].[CategoryId]
+ORDER BY [p0].[Id], [c].[Id] 
+[2025-10-17 19:00:58 INF] HTTP GET /api/Products responded 200 in 24.3193 ms 
+[2025-10-17 19:01:00 INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p] 
+[2025-10-17 19:01:00 INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId], CAST(0 AS bit), [c].[Id], [c].[CategoryName], [p1].[Id], [p1].[ProductName], [p1].[Description], [p1].[Stock], [p1].[Price], [p1].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p1] ON [c].[Id] = [p1].[CategoryId]
+ORDER BY [p0].[Id], [c].[Id] 
+[2025-10-17 19:01:00 INF] HTTP GET /api/Products responded 200 in 38.0440 ms 
+[2025-10-17 19:01:08 INF] Executed DbCommand (3ms) [Parameters=[@__search_0_contains='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE LOWER([c].[CategoryName]) LIKE @__search_0_contains ESCAPE N'\' 
+[2025-10-17 19:01:08 INF] Executed DbCommand (5ms) [Parameters=[@__search_0_contains='?' (Size = 4000), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[ProductName], [s].[Description], [s].[Stock], [s].[Price], [s].[CategoryId], [s].[c], [s].[Id0], [s].[CategoryName], [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[ProductName], [p].[Description], [p].[Stock], [p].[Price], [p].[CategoryId], CAST(0 AS bit) AS [c], [c].[Id] AS [Id0], [c].[CategoryName]
+    FROM [Products] AS [p]
+    INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+    WHERE LOWER([c].[CategoryName]) LIKE @__search_0_contains ESCAPE N'\'
+    ORDER BY (SELECT 1)
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [s]
+LEFT JOIN [Products] AS [p0] ON [s].[Id0] = [p0].[CategoryId]
+ORDER BY [s].[Id], [s].[Id0] 
+[2025-10-17 19:01:08 INF] HTTP GET /api/Products responded 200 in 47.5044 ms 
+[2025-10-17 19:01:18 INF] Executed DbCommand (1ms) [Parameters=[@__search_0_contains='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE LOWER([c].[CategoryName]) LIKE @__search_0_contains ESCAPE N'\' 
+[2025-10-17 19:01:18 INF] Executed DbCommand (1ms) [Parameters=[@__search_0_contains='?' (Size = 4000), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[ProductName], [s].[Description], [s].[Stock], [s].[Price], [s].[CategoryId], [s].[c], [s].[Id0], [s].[CategoryName], [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[ProductName], [p].[Description], [p].[Stock], [p].[Price], [p].[CategoryId], CAST(0 AS bit) AS [c], [c].[Id] AS [Id0], [c].[CategoryName]
+    FROM [Products] AS [p]
+    INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+    WHERE LOWER([c].[CategoryName]) LIKE @__search_0_contains ESCAPE N'\'
+    ORDER BY (SELECT 1)
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [s]
+LEFT JOIN [Products] AS [p0] ON [s].[Id0] = [p0].[CategoryId]
+ORDER BY [s].[Id], [s].[Id0] 
+[2025-10-17 19:01:18 INF] HTTP GET /api/Products responded 200 in 33.6282 ms 
+[2025-10-17 19:01:52 INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__id_0 
+[2025-10-17 19:01:52 ERR] HTTP PUT /api/Products responded 500 in 186.2122 ms 
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UpdateProductCommand -> Product
+NightTech.Application.Products.Commands.UpdateProduct.UpdateProductCommand -> NightTech.Domain.Entities.Product
+   at lambda_method722(Closure, UpdateProductCommand, Product, ResolutionContext)
+   at NightTech.Application.Products.Commands.UpdateProduct.UpdateProductCommandHandler.Handle(UpdateProductCommand request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Products\Commands\UpdateProduct\UpdateProductCommandHandler.cs:line 14
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`1.<>c__DisplayClass1_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at NightTect.API.Controllers.ProductsController.UpdateProduct(UpdateProductCommand request) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\ProductsController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-10-17 19:01:52 ERR] Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UpdateProductCommand -> Product
+NightTech.Application.Products.Commands.UpdateProduct.UpdateProductCommand -> NightTech.Domain.Entities.Product 
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UpdateProductCommand -> Product
+NightTech.Application.Products.Commands.UpdateProduct.UpdateProductCommand -> NightTech.Domain.Entities.Product
+   at lambda_method722(Closure, UpdateProductCommand, Product, ResolutionContext)
+   at NightTech.Application.Products.Commands.UpdateProduct.UpdateProductCommandHandler.Handle(UpdateProductCommand request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Products\Commands\UpdateProduct\UpdateProductCommandHandler.cs:line 14
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`1.<>c__DisplayClass1_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at NightTect.API.Controllers.ProductsController.UpdateProduct(UpdateProductCommand request) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\ProductsController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at gizmogeo.API.Middlewares.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Middlewares\ErrorHandlingMiddleware.cs:line 11
+[2025-10-17 19:03:16 INF] Executed DbCommand (11ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__id_0 
+[2025-10-17 19:03:16 INF] HTTP GET /api/Products/a875fbad-5211-412e-285b-08de0d8dd6c3 responded 200 in 50.3529 ms 
+[2025-10-17 19:03:20 INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__id_0 
+[2025-10-17 19:03:20 INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Products]
+OUTPUT 1
+WHERE [Id] = @p0; 
+[2025-10-17 19:03:20 INF] HTTP DELETE /api/Products responded 204 in 53.3756 ms 
+[2025-10-17 19:04:11 INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__id_0 
+[2025-10-17 19:04:11 ERR] HTTP GET /api/Products/a875fbad-5211-412e-285b-08de0d8dd6c3 responded 500 in 108.0396 ms 
+NightTech.Domain.Exceptions.NotFoundException: Product with: a875fbad-5211-412e-285b-08de0d8dd6c3 doesn't exist
+   at NightTech.Application.Products.Querys.GetProductsById.GetProductsByIdQueryHandler.Handle(GetProductsByIdQuery request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Products\Querys\GetProductsById\GetProductsByIdQueryHandler.cs:line 14
+   at NightTect.API.Controllers.ProductsController.GetByIdProduct(Guid id) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\ProductsController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-10-17 19:04:11 WRN] Product with: a875fbad-5211-412e-285b-08de0d8dd6c3 doesn't exist 
+[2025-10-17 19:04:16 INF] Executed DbCommand (40ms) [Parameters=[@__search_0_contains='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE LOWER([c].[CategoryName]) LIKE @__search_0_contains ESCAPE N'\' 
+[2025-10-17 19:04:16 INF] Executed DbCommand (7ms) [Parameters=[@__search_0_contains='?' (Size = 4000), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[ProductName], [s].[Description], [s].[Stock], [s].[Price], [s].[CategoryId], [s].[c], [s].[Id0], [s].[CategoryName], [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[ProductName], [p].[Description], [p].[Stock], [p].[Price], [p].[CategoryId], CAST(0 AS bit) AS [c], [c].[Id] AS [Id0], [c].[CategoryName]
+    FROM [Products] AS [p]
+    INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+    WHERE LOWER([c].[CategoryName]) LIKE @__search_0_contains ESCAPE N'\'
+    ORDER BY (SELECT 1)
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [s]
+LEFT JOIN [Products] AS [p0] ON [s].[Id0] = [p0].[CategoryId]
+ORDER BY [s].[Id], [s].[Id0] 
+[2025-10-17 19:04:16 INF] HTTP GET /api/Products responded 200 in 66.8147 ms 
+[2025-10-17 19:04:19 INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p] 
+[2025-10-17 19:04:19 INF] Executed DbCommand (20ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[ProductName], [p0].[Description], [p0].[Stock], [p0].[Price], [p0].[CategoryId], CAST(0 AS bit), [c].[Id], [c].[CategoryName], [p1].[Id], [p1].[ProductName], [p1].[Description], [p1].[Stock], [p1].[Price], [p1].[CategoryId]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p1] ON [c].[Id] = [p1].[CategoryId]
+ORDER BY [p0].[Id], [c].[Id] 
+[2025-10-17 19:04:19 INF] HTTP GET /api/Products responded 200 in 56.3815 ms 
+[2025-10-17 19:05:04 INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Carts] AS [c] 
+[2025-10-17 19:05:04 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. 
+[2025-10-17 19:05:04 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased. 
+[2025-10-17 19:05:04 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'. 
+[2025-10-17 19:05:04 INF] Executed DbCommand (29ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[UserId], CAST(0 AS bit), [u].[Id], [u].[UserName], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PhoneNumber], [u].[Country], [u].[IsActive], [u].[Role], [u].[CreatedAt], [c1].[Id], [c1].[CartId], [c1].[Price], [c1].[ProductId], [c1].[ProductName], [c1].[Quantity], (
+    SELECT COALESCE(SUM([c2].[Price] * CAST([c2].[Quantity] AS decimal(18,2))), 0.0)
+    FROM [CartItems] AS [c2]
+    WHERE [c0].[Id] = [c2].[CartId]), [c3].[Id], [c3].[CartId], [c3].[Price], [c3].[ProductId], [c3].[ProductName], [c3].[Quantity], (
+    SELECT COUNT(*)
+    FROM [CartItems] AS [c4]
+    WHERE [c0].[Id] = [c4].[CartId]), [s].[Id], [s].[ProductId], [s].[c], [s].[Id0], [s].[ProductName], [s].[Description], [s].[Stock], [s].[Price], [s].[CategoryId], [s].[c0], [s].[Id1], [s].[CategoryName], [s].[Id2], [s].[ProductName0], [s].[Description0], [s].[Stock0], [s].[Price0], [s].[CategoryId0], [s].[ProductName1], [s].[Price1], [s].[Quantity], [s].[CartId]
+FROM (
+    SELECT [c].[Id], [c].[UserId]
+    FROM [Carts] AS [c]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [c0]
+INNER JOIN [Users] AS [u] ON [c0].[UserId] = [u].[Id]
+LEFT JOIN [CartItems] AS [c1] ON [c0].[Id] = [c1].[CartId]
+LEFT JOIN [CartItems] AS [c3] ON [c0].[Id] = [c3].[CartId]
+LEFT JOIN (
+    SELECT [c5].[Id], [c5].[ProductId], CAST(0 AS bit) AS [c], [p].[Id] AS [Id0], [p].[ProductName], [p].[Description], [p].[Stock], [p].[Price], [p].[CategoryId], CAST(0 AS bit) AS [c0], [c6].[Id] AS [Id1], [c6].[CategoryName], [p0].[Id] AS [Id2], [p0].[ProductName] AS [ProductName0], [p0].[Description] AS [Description0], [p0].[Stock] AS [Stock0], [p0].[Price] AS [Price0], [p0].[CategoryId] AS [CategoryId0], [c5].[ProductName] AS [ProductName1], [c5].[Price] AS [Price1], [c5].[Quantity], [c5].[CartId]
+    FROM [CartItems] AS [c5]
+    INNER JOIN [Products] AS [p] ON [c5].[ProductId] = [p].[Id]
+    INNER JOIN [Categories] AS [c6] ON [p].[CategoryId] = [c6].[Id]
+    LEFT JOIN [Products] AS [p0] ON [c6].[Id] = [p0].[CategoryId]
+) AS [s] ON [c0].[Id] = [s].[CartId]
+ORDER BY [c0].[Id], [u].[Id], [c1].[Id], [c3].[Id], [s].[Id], [s].[Id0], [s].[Id1] 
+[2025-10-17 19:05:04 INF] HTTP GET /api/Cart responded 200 in 180.1454 ms 
+[2025-10-17 19:05:52 INF] Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[ItemCount], [s].[TotalPrice], [s].[UserId], [s].[Id0], [s].[CartId], [s].[Country], [s].[CreatedAt], [s].[Email], [s].[FirstName], [s].[IsActive], [s].[IsAdmin], [s].[LastName], [s].[PasswordHash], [s].[PhoneNumber], [s].[RefreshToken], [s].[RefreshTokenExpireDate], [s].[Role], [s].[UpdatedAt], [s].[UserName], [s0].[Id], [s0].[CartId], [s0].[Price], [s0].[ProductId], [s0].[ProductName], [s0].[Quantity], [s0].[Id0], [s0].[CategoryId], [s0].[CreatedAt], [s0].[Description], [s0].[Price0], [s0].[ProductName0], [s0].[Stock], [s0].[UpdatedAt], [s0].[Id1], [s0].[CategoryName]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId], [u].[Id] AS [Id0], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName]
+    FROM [Carts] AS [c]
+    INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+    WHERE [c].[Id] = @__id_0
+) AS [s]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[Price], [c0].[ProductId], [c0].[ProductName], [c0].[Quantity], [p].[Id] AS [Id0], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Price] AS [Price0], [p].[ProductName] AS [ProductName0], [p].[Stock], [p].[UpdatedAt], [c1].[Id] AS [Id1], [c1].[CategoryName]
+    FROM [CartItems] AS [c0]
+    INNER JOIN [Products] AS [p] ON [c0].[ProductId] = [p].[Id]
+    INNER JOIN [Categories] AS [c1] ON [p].[CategoryId] = [c1].[Id]
+) AS [s0] ON [s].[Id] = [s0].[CartId]
+ORDER BY [s].[Id], [s].[Id0], [s0].[Id], [s0].[Id0] 
+[2025-10-17 19:05:52 INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Price], [p].[ProductName], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__id_0 
+[2025-10-17 19:05:52 ERR] Failed executing DbCommand (12ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Guid), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CartItems] ([Id], [CartId], [Price], [ProductId], [ProductName], [Quantity])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5); 
+[2025-10-17 19:05:52 ERR] An exception occurred in the database while saving changes for context type 'NightTechDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'ProductName', table 'NightTechDb.dbo.CartItems'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:aeffbde2-ac44-4312-8889-6d2766e297e0
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken) 
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'ProductName', table 'NightTechDb.dbo.CartItems'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:aeffbde2-ac44-4312-8889-6d2766e297e0
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+[2025-10-17 19:05:53 ERR] HTTP POST /api/Cart responded 500 in 339.0560 ms 
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'ProductName', table 'NightTechDb.dbo.CartItems'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:aeffbde2-ac44-4312-8889-6d2766e297e0
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at NightTech.Infrastructure.Repositories.UnitOfWork.SaveChangesAsync() in C:\Users\chakh\source\repos\NightTech\src\NightTech.Infrastructure\Repositories\UnitOfWork.cs:line 33
+   at NightTech.Application.Carts.Commands.AddCartItem.AddCartItemCommandHandler.Handle(AddCartItemCommand request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Carts\Commands\AddCartItem\AddCartItemCommandHandler.cs:line 28
+   at NightTect.API.Controllers.CartController.AddCartItem(AddCartItemCommand addCartItems) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\CartController.cs:line 31
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-10-17 19:05:53 ERR] An error occurred while saving the entity changes. See the inner exception for details. 
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'ProductName', table 'NightTechDb.dbo.CartItems'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:aeffbde2-ac44-4312-8889-6d2766e297e0
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at NightTech.Infrastructure.Repositories.UnitOfWork.SaveChangesAsync() in C:\Users\chakh\source\repos\NightTech\src\NightTech.Infrastructure\Repositories\UnitOfWork.cs:line 33
+   at NightTech.Application.Carts.Commands.AddCartItem.AddCartItemCommandHandler.Handle(AddCartItemCommand request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Carts\Commands\AddCartItem\AddCartItemCommandHandler.cs:line 28
+   at NightTect.API.Controllers.CartController.AddCartItem(AddCartItemCommand addCartItems) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\CartController.cs:line 31
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at gizmogeo.API.Middlewares.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Middlewares\ErrorHandlingMiddleware.cs:line 11
+[2025-10-17 19:07:27 INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-17 19:07:27 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-17 19:07:27 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-17 19:07:29 INF] HTTP GET /swagger/index.html responded 200 in 86.8070 ms 
+[2025-10-17 19:07:29 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 39.9243 ms 

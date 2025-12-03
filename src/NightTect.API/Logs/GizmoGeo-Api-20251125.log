@@ -1,0 +1,302 @@
+[2025-11-25 17:42:43 INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-25 17:42:43 INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-25 17:42:43 INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-25 17:42:47 INF] HTTP GET /swagger/index.html responded 200 in 84.2153 ms 
+[2025-11-25 17:42:47 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 72.5826 ms 
+[2025-11-25 17:42:56 INF] HTTP GET /api/Categories responded 401 in 104.4319 ms 
+[2025-11-25 17:43:53 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-25 17:43:53 WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-25 17:43:54 INF] Executed DbCommand (59ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[UserName] = @__name_0 
+[2025-11-25 17:43:54 INF] Executed DbCommand (4ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-11-25 17:43:54 ERR] HTTP POST /api/Auth/register responded 500 in 1171.0406 ms 
+NightTech.Domain.Exceptions.AlreadyExistsException: User with this Email Exists,
+   at NightTech.Application.Auth.Commands.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Auth\Commands\Register\RegisterCommandHandler.cs:line 32
+   at NightTect.API.Controllers.AuthController.Register(RegisterCommand registerCommand) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\AuthController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-11-25 17:43:54 INF] User with this Email Exists, 
+[2025-11-25 17:44:16 INF] Executed DbCommand (5ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-11-25 17:44:17 ERR] HTTP POST /api/Auth/login responded 500 in 630.3938 ms 
+System.UnauthorizedAccessException: Email is not confirmed. Please confirm your email to login.
+   at NightTech.Application.Auth.Commands.Login.LoginCommandHandler.Handle(LoginCommand request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Auth\Commands\Login\LoginCommandHandler.cs:line 28
+   at NightTect.API.Controllers.AuthController.Login(LoginCommand loginCommand) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\AuthController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-11-25 17:44:17 ERR] Email is not confirmed. Please confirm your email to login. 
+System.UnauthorizedAccessException: Email is not confirmed. Please confirm your email to login.
+   at NightTech.Application.Auth.Commands.Login.LoginCommandHandler.Handle(LoginCommand request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Auth\Commands\Login\LoginCommandHandler.cs:line 28
+   at NightTect.API.Controllers.AuthController.Login(LoginCommand loginCommand) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\AuthController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at gizmogeo.API.Middlewares.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Middlewares\ErrorHandlingMiddleware.cs:line 11
+[2025-11-25 18:04:15 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-25 18:04:15 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-25 18:04:15 INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-25 18:04:18 INF] HTTP GET /swagger/index.html responded 200 in 317.6213 ms 
+[2025-11-25 18:04:18 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 44.7433 ms 
+[2025-11-25 18:04:49 FTL] The host was aborted. 
+[2025-11-25 18:04:52 FTL] The host was aborted. 
+[2025-11-25 18:04:57 FTL] The host was aborted. 
+[2025-11-25 18:05:04 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-25 18:05:05 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-25 18:05:05 INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-25 18:05:06 INF] HTTP GET /swagger/index.html responded 200 in 95.4619 ms 
+[2025-11-25 18:05:06 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 43.4079 ms 
+[2025-11-25 18:05:38 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-25 18:05:38 WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-25 18:05:39 INF] Executed DbCommand (38ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[UserName] = @__name_0 
+[2025-11-25 18:05:39 INF] Executed DbCommand (3ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-11-25 18:05:40 INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = DateTime2), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = Guid), @p18='?' (DbType = Int32), @p19='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p20='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CartId], [Country], [CreatedAt], [Email], [EmailConfirmed], [FirstName], [IsActive], [IsAdmin], [LastName], [PasswordHash], [PhoneNumber], [RefreshToken], [RefreshTokenExpireDate], [Role], [UpdatedAt], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+INSERT INTO [Carts] ([Id], [ItemCount], [TotalPrice], [UserId])
+VALUES (@p17, @p18, @p19, @p20); 
+[2025-11-25 18:05:40 INF] Executed DbCommand (5ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CartId] = @p0
+OUTPUT 1
+WHERE [Id] = @p1; 
+[2025-11-25 18:05:43 INF] HTTP POST /api/Auth/register responded 200 in 4580.4542 ms 
+[2025-11-25 18:05:47 ERR] HTTP GET /api/auth/verify-email responded 500 in 152.9564 ms 
+System.FormatException: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at NightTect.API.Controllers.AuthController.VerifyEmail(String token) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\AuthController.cs:line 53
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-11-25 18:05:47 ERR] The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters. 
+System.FormatException: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at NightTect.API.Controllers.AuthController.VerifyEmail(String token) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\AuthController.cs:line 53
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at gizmogeo.API.Middlewares.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Middlewares\ErrorHandlingMiddleware.cs:line 11
+[2025-11-25 18:05:47 INF] HTTP GET /favicon.ico responded 404 in 3.1047 ms 
+[2025-11-25 18:11:30 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-25 18:11:30 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-25 18:11:30 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-25 18:11:32 INF] HTTP GET /swagger/index.html responded 200 in 129.4119 ms 
+[2025-11-25 18:11:32 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 31.9270 ms 
+[2025-11-25 18:17:13 INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-25 18:17:13 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-25 18:17:13 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-25 18:17:15 INF] HTTP GET /swagger/index.html responded 200 in 91.2883 ms 
+[2025-11-25 18:17:15 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 33.7390 ms 
+[2025-11-25 18:18:09 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-25 18:18:09 WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-25 18:18:10 INF] Executed DbCommand (65ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[UserName] = @__name_0 
+[2025-11-25 18:18:10 INF] Executed DbCommand (6ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-11-25 18:18:11 INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = DateTime2), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = Guid), @p18='?' (DbType = Int32), @p19='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p20='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CartId], [Country], [CreatedAt], [Email], [EmailConfirmed], [FirstName], [IsActive], [IsAdmin], [LastName], [PasswordHash], [PhoneNumber], [RefreshToken], [RefreshTokenExpireDate], [Role], [UpdatedAt], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+INSERT INTO [Carts] ([Id], [ItemCount], [TotalPrice], [UserId])
+VALUES (@p17, @p18, @p19, @p20); 
+[2025-11-25 18:18:11 INF] Executed DbCommand (7ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CartId] = @p0
+OUTPUT 1
+WHERE [Id] = @p1; 
+[2025-11-25 18:18:13 INF] HTTP POST /api/Auth/register responded 200 in 4182.9765 ms 
+[2025-11-25 18:18:29 INF] HTTP GET /api/auth/verify-email responded 200 in 177.1988 ms 
+[2025-11-25 18:18:29 INF] HTTP GET /favicon.ico responded 404 in 1.9629 ms 
+[2025-11-25 18:20:50 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-25 18:20:50 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-25 18:20:50 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-25 18:20:52 INF] HTTP GET /swagger/index.html responded 200 in 130.8114 ms 
+[2025-11-25 18:20:52 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 53.0486 ms 
+[2025-11-25 18:21:02 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-25 18:21:03 INF] Executed DbCommand (72ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-11-25 18:21:06 INF] HTTP GET /api/Auth/resend-email-verification responded 200 in 3422.0752 ms 
+[2025-11-25 18:21:10 INF] HTTP GET /api/auth/verify-email responded 200 in 153.2577 ms 
+[2025-11-25 18:21:10 INF] HTTP GET /favicon.ico responded 404 in 2.4166 ms 
+[2025-11-25 18:27:07 INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-25 18:27:07 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-25 18:27:07 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-25 18:27:09 INF] HTTP GET /swagger/index.html responded 200 in 86.6274 ms 
+[2025-11-25 18:27:09 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 66.4293 ms 
+[2025-11-25 18:27:22 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-25 18:27:22 INF] Executed DbCommand (42ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-11-25 18:27:25 INF] HTTP GET /api/Auth/resend-email-verification responded 200 in 3044.2970 ms 
+[2025-11-25 18:27:31 INF] HTTP GET /api/auth/verify-email responded 200 in 173.3743 ms 
+[2025-11-25 18:27:31 INF] HTTP GET /favicon.ico responded 404 in 2.6166 ms 
+[2025-11-25 18:27:58 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-25 18:27:58 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-25 18:27:58 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-25 18:28:00 INF] HTTP GET /swagger/index.html responded 200 in 96.6421 ms 
+[2025-11-25 18:28:01 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 18.2569 ms 
+[2025-11-25 18:28:10 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-25 18:28:11 INF] Executed DbCommand (38ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-11-25 18:28:11 ERR] HTTP GET /api/Auth/resend-email-verification responded 500 in 1035.7805 ms 
+NightTech.Domain.Exceptions.NotFoundException: User with:  sosochakhava@gmail.com doesn't exist
+   at NightTech.Application.Auth.Commands.ResendEmailVerification.ResendEmailVerificationCommandHandler.Handle(ResendEmailVerificationCommand request, CancellationToken cancellationToken) in C:\Users\chakh\source\repos\NightTech\src\NightTech.Application\Auth\Commands\ResendEmailVerification\ResendEmailVerificationCommandHandler.cs:line 18
+   at NightTect.API.Controllers.AuthController.ResendEmailVerification(String Email) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Controllers\AuthController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-11-25 18:28:11 WRN] User with:  sosochakhava@gmail.com doesn't exist 
+[2025-11-25 18:28:18 INF] Executed DbCommand (3ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-11-25 18:28:21 INF] HTTP GET /api/Auth/resend-email-verification responded 200 in 2463.1983 ms 
+[2025-11-25 18:28:24 INF] HTTP GET /api/auth/verify-email responded 200 in 142.1593 ms 
+[2025-11-25 18:28:24 INF] HTTP GET /favicon.ico responded 404 in 0.5908 ms 

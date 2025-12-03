@@ -1,0 +1,15 @@
+[2025-10-06 18:12:00 INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-06 18:12:00 INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-06 18:12:00 INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-06 18:12:03 INF] HTTP GET /swagger responded 301 in 6.3841 ms 
+[2025-10-06 18:12:04 INF] HTTP GET /swagger/index.html responded 200 in 130.3615 ms 
+[2025-10-06 18:12:04 INF] HTTP GET /swagger/swagger-ui.css responded 200 in 49.5089 ms 
+[2025-10-06 18:12:04 INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 58.4145 ms 
+[2025-10-06 18:12:04 INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 149.3904 ms 
+[2025-10-06 18:12:04 INF] HTTP GET /swagger/favicon-32x32.png responded 200 in 3.8302 ms 
+[2025-10-06 18:12:04 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 64.6533 ms 

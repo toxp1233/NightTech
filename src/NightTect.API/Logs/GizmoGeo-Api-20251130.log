@@ -1,0 +1,122 @@
+[2025-11-30 16:25:52 INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-30 16:25:53 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-30 16:25:53 INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-30 16:25:58 INF] HTTP GET /swagger/index.html responded 200 in 94.5263 ms 
+[2025-11-30 16:25:58 INF] HTTP GET /swagger/swagger-ui.css responded 304 in 6.1548 ms 
+[2025-11-30 16:25:58 INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 6.1524 ms 
+[2025-11-30 16:25:58 INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 6.1548 ms 
+[2025-11-30 16:25:58 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 60.7950 ms 
+[2025-11-30 16:25:58 INF] HTTP GET /swagger/favicon-32x32.png responded 304 in 0.1985 ms 
+[2025-11-30 16:26:07 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-30 16:26:08 INF] Executed DbCommand (67ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-11-30 16:26:11 INF] HTTP GET /api/Auth/resend-email-verification responded 200 in 3695.5476 ms 
+[2025-11-30 16:26:21 INF] HTTP GET /api/auth/verify-email responded 200 in 239.1769 ms 
+[2025-11-30 16:26:21 INF] HTTP GET /favicon.ico responded 404 in 2.1840 ms 
+[2025-11-30 16:30:32 INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-30 16:30:32 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-30 16:30:32 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-30 16:30:33 INF] HTTP GET /swagger/index.html responded 200 in 78.2795 ms 
+[2025-11-30 16:30:34 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 167.9843 ms 
+[2025-11-30 16:30:42 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-30 16:30:42 INF] Executed DbCommand (111ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-11-30 16:30:44 INF] HTTP GET /api/Auth/resend-email-verification responded 200 in 2783.1959 ms 
+[2025-11-30 16:30:50 INF] HTTP GET /api/auth/verify-email responded 200 in 172.6306 ms 
+[2025-11-30 16:33:04 INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-30 16:33:04 INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-30 16:33:04 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-30 16:33:05 INF] HTTP GET /swagger/index.html responded 200 in 77.1377 ms 
+[2025-11-30 16:33:05 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 56.0352 ms 
+[2025-11-30 16:33:15 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-30 16:33:16 INF] Executed DbCommand (39ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-11-30 16:33:18 INF] HTTP GET /api/Auth/resend-email-verification responded 200 in 2412.2566 ms 
+[2025-11-30 16:34:05 INF] HTTP GET /api/auth/verify-email responded 200 in 44657.5113 ms 
+[2025-11-30 16:37:30 INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-30 16:37:30 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-30 16:37:30 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-30 16:37:31 INF] HTTP GET /swagger/index.html responded 200 in 83.4159 ms 
+[2025-11-30 16:37:31 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 36.8524 ms 
+[2025-11-30 16:37:41 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-30 16:37:42 INF] Executed DbCommand (33ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-11-30 16:37:43 INF] HTTP GET /api/Auth/resend-email-verification responded 200 in 2299.8984 ms 
+[2025-11-30 16:52:23 INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-30 16:52:23 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-30 16:52:23 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-30 16:52:24 INF] HTTP GET /swagger/index.html responded 200 in 108.7770 ms 
+[2025-11-30 16:52:24 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 24.7988 ms 
+[2025-11-30 16:53:30 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-30 16:53:30 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-30 16:53:30 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-30 16:53:32 INF] HTTP GET /swagger/index.html responded 200 in 75.8027 ms 
+[2025-11-30 16:53:32 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 26.4496 ms 
+[2025-11-30 16:53:42 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-30 16:53:43 INF] Executed DbCommand (45ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-11-30 16:53:44 INF] HTTP GET /api/Auth/resend-email-verification responded 200 in 2452.4717 ms 
+[2025-11-30 16:56:15 INF] HTTP GET /api/auth/verify-email responded 200 in 120487.0600 ms 
+[2025-11-30 16:57:40 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-11-30 16:57:40 INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-11-30 16:57:40 INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-11-30 16:57:41 INF] HTTP GET /swagger/index.html responded 200 in 80.0993 ms 
+[2025-11-30 16:57:41 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 19.6775 ms 
+[2025-11-30 16:57:53 WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+[2025-11-30 16:57:54 INF] Executed DbCommand (32ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CartId], [u].[Country], [u].[CreatedAt], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[IsAdmin], [u].[LastName], [u].[PasswordHash], [u].[PhoneNumber], [u].[RefreshToken], [u].[RefreshTokenExpireDate], [u].[Role], [u].[UpdatedAt], [u].[UserName], [c].[Id], [c].[ItemCount], [c].[TotalPrice], [c].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [Carts] AS [c] ON [u].[Id] = [c].[UserId]
+WHERE [u].[Email] = @__Email_0 
+[2025-11-30 16:57:56 INF] HTTP GET /api/Auth/resend-email-verification responded 200 in 2704.3731 ms 
+[2025-11-30 16:58:49 INF] HTTP GET /api/auth/verify-email responded 200 in 7721.1763 ms 

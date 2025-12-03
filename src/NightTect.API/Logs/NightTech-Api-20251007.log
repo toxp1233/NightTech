@@ -1,0 +1,10 @@
+[2025-10-07 15:39:37 INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-07 15:39:37 INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-07 15:39:37 INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-07 15:39:40 INF] HTTP GET /swagger/index.html responded 200 in 136.5673 ms 
+[2025-10-07 15:39:40 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 14.4788 ms 

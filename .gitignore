@@ -1,35 +1,7 @@
-## .NET build files
 bin/
 obj/
-out/
-Release/
-Debug/
-
-## Rider / VS / VSCode
 .vs/
-.idea/
-.vscode/
-
-## User-specific files
 *.user
 *.suo
-
-## Logs
-*.log
-
-## Secrets (important)
 appsettings.Development.json
-appsettings.Local.json
-appsettings.*.local.json
-secrets.json
-*.secret.json
-*.secrets.json
-
-## OS junk
-.DS_Store
-Thumbs.db
-
-## Publish output
-/dist/
-/publish/
 

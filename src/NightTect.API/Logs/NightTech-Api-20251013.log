@@ -1,0 +1,51 @@
+[2025-10-13 18:04:58 INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-13 18:04:58 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-13 18:04:58 INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-13 18:05:01 INF] HTTP GET /swagger responded 301 in 4.6287 ms 
+[2025-10-13 18:05:01 INF] HTTP GET /swagger/index.html responded 200 in 126.3875 ms 
+[2025-10-13 18:05:01 INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 57.8870 ms 
+[2025-10-13 18:05:01 INF] HTTP GET /swagger/swagger-ui.css responded 200 in 57.8845 ms 
+[2025-10-13 18:05:01 INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 133.4099 ms 
+[2025-10-13 18:05:02 INF] HTTP GET /swagger/favicon-32x32.png responded 200 in 0.2574 ms 
+[2025-10-13 18:05:02 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 113.1000 ms 
+[2025-10-13 18:24:01 INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-13 18:24:01 INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-13 18:24:01 INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-13 18:24:03 INF] HTTP GET /swagger/index.html responded 200 in 107.5035 ms 
+[2025-10-13 18:24:03 ERR] HTTP GET /swagger/v1/swagger.json responded 500 in 16.1884 ms 
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/Order" for actions - NightTect.API.Controllers.OrderController.GetOrderById (NightTect.API),NightTect.API.Controllers.OrderController.GetOrderByUserId (NightTect.API). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2025-10-13 18:24:03 ERR] Conflicting method/path combination "POST api/Order" for actions - NightTect.API.Controllers.OrderController.GetOrderById (NightTect.API),NightTect.API.Controllers.OrderController.GetOrderByUserId (NightTect.API). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround 
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/Order" for actions - NightTect.API.Controllers.OrderController.GetOrderById (NightTect.API),NightTect.API.Controllers.OrderController.GetOrderByUserId (NightTect.API). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at gizmogeo.API.Middlewares.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\chakh\source\repos\NightTech\src\NightTect.API\Middlewares\ErrorHandlingMiddleware.cs:line 11
+[2025-10-13 18:28:21 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-10-13 18:28:21 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-10-13 18:28:21 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-10-13 18:28:23 INF] HTTP GET /swagger/index.html responded 200 in 106.4713 ms 
+[2025-10-13 18:28:23 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 18.6605 ms 

@@ -1,0 +1,22 @@
+[2025-09-27 02:59:45 FTL] The host was aborted. 
+[2025-09-27 02:59:54 FTL] The host was aborted. 
+[2025-09-27 03:00:11 INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-09-27 03:00:11 INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-09-27 03:00:12 INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-09-27 03:00:14 INF] HTTP GET /swagger/index.html responded 200 in 135.0615 ms 
+[2025-09-27 03:00:14 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 15.7930 ms 
+[2025-09-27 03:09:02 INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[2025-09-27 03:09:02 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[2025-09-27 03:09:02 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[2025-09-27 03:09:04 INF] HTTP GET /swagger/index.html responded 200 in 88.4021 ms 
+[2025-09-27 03:09:04 INF] HTTP GET /swagger/v1/swagger.json responded 200 in 54.5956 ms 
