@@ -2,6 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using NightTech.Domain.Entities;
 using NightTech.Domain.Interfaces;
+using Serilog;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -69,4 +70,71 @@ public class JwtService(IConfiguration config) : IJwtService
 
         return GenerateToken(user);
     }
+
+
+    public string GenerateEmailVerificationToken(Guid userId)
+    {
+        var jwtKey = _config["TokenSettings:Key"];
+        var issuer = _config["TokenSettings:Issuer"];
+        var audience = _config["TokenSettings:Audience"];
+
+        var claims = new[]
+        {
+        new Claim("uid", userId.ToString())
+        };
+
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey!));
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+        var tokenDescriptor = new SecurityTokenDescriptor
+        {
+            Subject = new ClaimsIdentity(claims),
+            Expires = DateTime.UtcNow.AddHours(3),   // <-- ensures exp claim
+            Issuer = issuer,
+            Audience = audience,
+            SigningCredentials = creds
+        };
+
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var token = tokenHandler.CreateToken(tokenDescriptor);
+        return tokenHandler.WriteToken(token);
+    }
+
+
+    public Guid? ValidateEmailVerificationToken(string token)
+    {
+        var jwtKey = _config["TokenSettings:Key"];
+        var issuer = _config["TokenSettings:Issuer"];
+        var audience = _config["TokenSettings:Audience"];
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var key = Encoding.UTF8.GetBytes(jwtKey!);
+
+        var validationParams = new TokenValidationParameters
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(key),
+            ClockSkew = TimeSpan.Zero // strict expiration
+        };
+
+        try
+        {
+            var principal = tokenHandler.ValidateToken(token, validationParams, out var validatedToken);
+
+            var uid = principal.FindFirst("uid")?.Value;
+            if (Guid.TryParse(uid, out var userId))
+                return userId;
+
+            return null;
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "JWT validation failed");
+            return null;
+        }
+
+    }
+
 }

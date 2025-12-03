@@ -1,9 +1,8 @@
 ﻿using MediatR;
-using NightTech.Application.Auth.Dtos;
 
-namespace NightTech.Application.Auth.Commands.Register;
+namespace NightTech.Application.Users.Commands.CreateAccount;
 
-public record RegisterCommand(
+public record CreateAccountCommand(
     string UserName,
     string Email,
     string Password,
@@ -11,4 +10,5 @@ public record RegisterCommand(
     string? LastName,
     string? PhoneNumber,
     string? Country
-    ) : IRequest<string>;
+ ) : IRequest<string>;
+

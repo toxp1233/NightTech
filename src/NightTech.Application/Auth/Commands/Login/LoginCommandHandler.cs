@@ -20,6 +20,12 @@ public class LoginCommandHandler(
         if (!isPasswordValid)
         {
             throw new UnauthorizedAccessException("Invalid Password.");
+        } else if (!user.IsActive)
+        {
+            throw new UnauthorizedAccessException("Users account is either banned or deactivated");
+        } else if (!user.EmailConfirmed)
+        {
+            throw new UnauthorizedAccessException("Email is not confirmed. Please confirm your email to login.");
         }
         var tokenDto = new TokenDto
         {

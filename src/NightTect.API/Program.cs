@@ -41,12 +41,10 @@ try
     app.UseMiddleware<ErrorHandlingMiddleware>();
     app.UseSerilogRequestLogging();
 
-    // Swagger in dev
-    if (app.Environment.IsDevelopment())
-    {
-        app.UseSwagger();
-        app.UseSwaggerUI();
-    }
+  
+    app.UseSwagger();
+    app.UseSwaggerUI();
+    
 
     app.UseHttpsRedirection();
     app.UseAuthentication();

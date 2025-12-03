@@ -8,4 +8,6 @@ public interface IJwtService
     string GenerateRefreshToken();
     DateTime GenerateRefreshTokenExpiry();
     string ValidateRefreshToken(string refreshToken, User user);
+    string GenerateEmailVerificationToken(Guid userId);
+    Guid? ValidateEmailVerificationToken(string token);
 }

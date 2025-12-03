@@ -3,30 +3,28 @@ using MediatR;
 using NightTech.Domain.Entities;
 using NightTech.Domain.Exceptions;
 using NightTech.Domain.Interfaces;
-using NightTech.Application.common;
-namespace NightTech.Application.Auth.Commands.Register;
 
-public class RegisterCommandHandler
-    (
-    IUserRepository userRepository, 
-    IUnitOfWork unitOfWork, 
+namespace NightTech.Application.Users.Commands.CreateAccount;
+
+public class CreateAccountCommandHandler(
+    IUserRepository userRepository,
+    IUnitOfWork unitOfWork,
     IMapper mapper,
-    IPasswordHasherBcrypt passwordHasher, 
-    IJwtService jwtService,
-    ICartRepository cartRepository,
-    IEmailService emailService
-    ) : IRequestHandler<RegisterCommand, string>
+    IPasswordHasherBcrypt passwordHasher,
+    ICartRepository cartRepository
+    ) : IRequestHandler<CreateAccountCommand, string>
 {
-    public async Task<string> Handle(RegisterCommand request, CancellationToken cancellationToken)
+    public async Task<string> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
     {
         var existingUserName = await userRepository.GetByNameAsync(request.UserName);
         var existingUserEmail = await userRepository.GetByEmailAsync(request.Email);
-        Base64Helper Base64Helper = new();
+
 
         if (existingUserName != null)
         {
             throw new AlreadyExistsException(nameof(User), "Username");
-        } else if (existingUserEmail != null)
+        }
+        else if (existingUserEmail != null)
         {
             throw new AlreadyExistsException(nameof(User), "Email");
         }
@@ -46,10 +44,8 @@ public class RegisterCommandHandler
         createdUser.CartId = cart.Id;
         await unitOfWork.SaveChangesAsync();
 
-        var emailJwt = jwtService.GenerateEmailVerificationToken(createdUser.Id);
-        var verifyLink = $"https://localhost:7225/api/auth/verify-email?token={emailJwt}";
-
-        await emailService.SendEmailAsync(createdUser.Email, verifyLink);
-        return $"Verification link was sent to {createdUser.Email}";
+        return "User account created successfully.";
     }
 }
+
+

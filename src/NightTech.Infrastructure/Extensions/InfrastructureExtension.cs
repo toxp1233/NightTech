@@ -27,7 +27,7 @@ public static class InfrastructureExtension
         services.AddScoped<IOrderItemsRepository, OrderItemsRepository>();
         services.AddScoped<IJwtService, JwtService>();
         services.AddScoped<IStripeService, StripeService>();
-
+        services.AddScoped<IEmailService, EmailSerivce>();
         return services;
     }
 }

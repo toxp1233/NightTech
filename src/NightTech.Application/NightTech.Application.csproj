@@ -24,6 +24,7 @@
   <ItemGroup>
     <Folder Include="Carts\Dtos\" />
     <Folder Include="Orders\Mapper\" />
+    <Folder Include="Users\Dtos\" />
   </ItemGroup>
 
 </Project>
